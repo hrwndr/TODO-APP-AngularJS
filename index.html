@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TODO - An AngularJS APP</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <script src="script.js"></script>
+  <style>
+    .comp-true {text-decoration: line-through;font-style:italic;color:grey;}
+    span[contenteditable = "true"] {padding:4px;background-color: #fff;}
+  </style>
+</head>
+<body bg-color="#e5e5e5" ng-app="todo" ng-controller="mainctrl">
+  <h1 style="text-align:center;font-family:monospace;">Todo AngularJS APP</h1>
+  <center><input ng-model="task" ng-keyup="searchEnter()" type="text" style="margin:4px;padding:2px;border-radius:5px;border:1px solid #333;text-align:center;width:70%;height:25px;font-family:monospace;font-weight:bolder;" placeholder="Enter Your Task" id="textinput" ></center>
+  <div class="taskstoshow" id="card">
+  <ul type="none" id ="list" style="font-family:monospace;">
+    <li id="list_item" ng-repeat="temptask in tasks track by $index" >
+      <input type="checkbox" id="checkbox" ng-model="temptask.status">
+      <span class="comp-{{temptask.status}}" ng-keydown="entertoEdit(temptask.taskMsg)"  ng-dblclick="editIt()" contenteditable="false" id="tasktext">
+        {{temptask.taskMsg}}
+    </span>
+    </li>
+  </ul>
+</div>
+<footer>
+  Developed By Harwinder Singh
+</footer>
+</body>
+</html>

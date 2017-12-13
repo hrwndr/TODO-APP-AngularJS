@@ -1,0 +1,13 @@
+{
+  "name": "TODO AngularJS APP",
+  "short_name": "TODO",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#ddd",
+  "theme_color": "#ddd"
+}
